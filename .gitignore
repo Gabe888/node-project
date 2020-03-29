@@ -12,3 +12,4 @@
 
 # Ignore credential files
 credentials.json
+token.json
