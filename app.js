@@ -1,12 +1,13 @@
-const http = require('http');
+var express = require('express');
+var app = express();
 
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        res.write('Hello world');
-        res.end();
-    }
-});
+app.get('/', function (req, res) {
+   res.send('Hello World');
+})
 
-server.listen(3000);
-
-console.log('listening on port 3000. . . .');
+var server = app.listen(8081, function () {
+   var host = server.address().address
+   var port = server.address().port
+   
+   console.log("Now listening at http://%s:%s", host, port)
+})
